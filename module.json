@@ -12,8 +12,7 @@
   },
   "authors": [
     {
-      "name": "The League of Extraordinary FVTT Developers",
-      "url": "https://github.com/League-of-Foundry-Developers",
+      "name": "Clockwerk",
       "discord": "discordID#0001"
     }
   ],
@@ -21,15 +20,8 @@
     "systems": [],
     "requires": []
   },
-  "esmodules": [
-    "scripts/module.js"
-  ],
-  "scripts": [
-    "scripts/lib/lib.js"
-  ],
-  "styles": [
-    "styles/module.css"
-  ],
+  "scripts": ["dist/index.js"],
+  "styles": ["dist/module.css"],
   "languages": [
     {
       "lang": "en",
