@@ -1,4 +1,4 @@
-import { InventorySlot } from "~/components";
+import { PlayerInventory } from "~/components";
 
 const items: Item[] = [
   { id: "abc", name: "Sword", rarity: "common" },
@@ -12,11 +12,12 @@ const items: Item[] = [
 export default function DashboardPage() {
   return (
     <section>
-      {items.map((item) => (
-        <div key={item.id} className="m-5">
-          <InventorySlot view="list" item={item} />
-        </div>
-      ))}
+      <PlayerInventory
+        playerId="abc123"
+        characterName="Faran Vyshaan"
+        playerName="Ken"
+        items={items}
+      />
     </section>
   );
 }

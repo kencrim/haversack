@@ -29,6 +29,6 @@ export const useInventorySlotTailwindStyles = ({ item }: { item?: Item }) => {
 
   return {
     icon: `${baseIconStyles} ${beforeIconStyles} ${iconRarityGradient}`,
-    name: `${rarityColor} px-1 text-sm`,
+    name: `${rarityColor} whitespace-nowrap px-1 text-sm`,
   };
 };
