@@ -13,3 +13,10 @@ interface Item {
   rarity: rarity;
   [key: string]: number | string;
 }
+
+interface Currency {
+  copper: number;
+  silver: number;
+  gold: number;
+  platinum: number;
+}

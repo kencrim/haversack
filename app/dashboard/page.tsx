@@ -11,13 +11,12 @@ const items: Item[] = [
 
 export default function DashboardPage() {
   return (
-    <section>
-      <PlayerInventory
-        playerId="abc123"
-        characterName="Faran Vyshaan"
-        playerName="Ken"
-        items={items}
-      />
-    </section>
+    <PlayerInventory
+      playerId="abc123"
+      characterName="Faran Vyshaan"
+      playerName="Ken"
+      currency={{ platinum: 104, gold: 2230, silver: 37, copper: 2 }}
+      items={items}
+    />
   );
 }
