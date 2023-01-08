@@ -1,52 +1,18 @@
+import { useInventorySlotTailwindStyles } from "./inventorySlot.styles";
+
 interface InventorySlotProps {
   item?: Item;
   view?: "grid" | "list";
 }
 
 export const InventorySlot = ({ item, view = "grid" }: InventorySlotProps) => {
-  const styles = useInventorySlotTailwindStyles({ item, view });
+  const styles = useInventorySlotTailwindStyles({ item });
 
-  if (view === "grid") return <div className={styles.icon}></div>;
   return (
-    <div className="flex space-x-2 row-auto align-middle">
-      <div className={styles.icon} />
-      <p className={styles.name}>{item?.name}</p>
+    <div className="flex space-x-1.5 row-auto align-middle items-center">
+      <div className={styles.icon}>
+        <p className={styles.name}>{item?.name}</p>
+      </div>
     </div>
   );
-};
-
-const useInventorySlotTailwindStyles = ({ item, view }: InventorySlotProps) => {
-  const dimensions = view === "list" ? 5 : 10;
-  const baseIconStyles = `flex items-center bg-black box-border p-2 w-${dimensions} h-${dimensions} rounded-sm relative hover:bg-gray-900`;
-
-  const beforeIconStyles = `before:content-'' before:absolute before:-z-10 before:-m-px before:top-0 before:left-0 
-  before:bottom-0 before:right-0 before:rounded-sm`;
-
-  const rarity = item?.rarity || "common";
-
-  const iconRarityGradient = {
-    common: "before:bg-gradient-to-tr before:from-gray-500 before:to-gray-300",
-    uncommon:
-      "before:bg-gradient-to-tr before:from-green-500 before:to-green-300",
-    rare: "before:bg-gradient-to-tr before:from-blue-500 before:to-blue-300",
-    "very rare":
-      "before:bg-gradient-to-tr before:from-purple-500 before:to-purple-300",
-    legendary:
-      "before:bg-gradient-to-tr before:from-yellow-500 before:to-yellow-300",
-    artifact: "before:bg-gradient-to-tr before:from-red-500 before:to-red-300",
-  }[rarity];
-
-  const rarityColor = {
-    common: "text-gray-300",
-    uncommon: "text-green-300",
-    rare: "text-blue-300",
-    "very rare": "text-purple-300",
-    legendary: "text-yellow-300",
-    artifact: "text-red-300",
-  }[rarity];
-
-  return {
-    icon: `${baseIconStyles} ${beforeIconStyles} ${iconRarityGradient}`,
-    name: `${rarityColor} text-sm`,
-  };
 };
