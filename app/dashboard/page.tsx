@@ -1,4 +1,8 @@
-import { PlayerInventory, GroupInventory } from "~/components";
+import {
+  PlayerInventory,
+  GroupInventory,
+  TransactionHistory,
+} from "~/components";
 
 const items: Item[] = [
   { id: "abc", name: "Sword", rarity: "common", quantity: 2 },
@@ -9,10 +13,37 @@ const items: Item[] = [
   { id: "degf", name: "The Sword of the Gods", rarity: "artifact" },
 ];
 
+const transactions: Transaction[] = [
+  {
+    id: "abc123",
+    timestamp: new Date().valueOf(),
+    actor: "Faran Vyshaan",
+    recipient: "Ryggs Feegbizz",
+    action: "transfer",
+    items: [{ id: "abc", name: "Sword", rarity: "common", quantity: 2 }],
+    currency: { platinum: 20, gold: 54, silver: 3, copper: 222 },
+  },
+  {
+    id: "abc1f23",
+    timestamp: new Date().valueOf(),
+    actor: "Faran Vyshaan",
+    action: "transfer",
+    recipient: "Ryggs Feegbizz",
+    currency: { platinum: 20, gold: 54, silver: 3, copper: 222 },
+  },
+];
+
 export default function DashboardPage() {
   return (
     <div className="flex flex-col h-full">
-      <div className="flex flex-row h-fit">
+      <div className="flex flex-row h-2/5 pb-8">
+        <GroupInventory
+          currency={{ platinum: 104, gold: 2230, silver: 37, copper: 2 }}
+          items={items}
+        />
+        <TransactionHistory transactions={transactions} />
+      </div>
+      <div className="flex flex-row h-2/5">
         <PlayerInventory
           playerId="abc123"
           characterName="Faran Vyshaan"
@@ -43,12 +74,6 @@ export default function DashboardPage() {
           playerName="Wren"
           isActivePlayer={false}
           currency={{ platinum: 47, gold: 56, silver: 37, copper: 24 }}
-          items={items}
-        />
-      </div>
-      <div className="flex flex-row h-fit py-8">
-        <GroupInventory
-          currency={{ platinum: 104, gold: 2230, silver: 37, copper: 2 }}
           items={items}
         />
       </div>

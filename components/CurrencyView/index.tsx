@@ -20,7 +20,7 @@ export const CurrencyView = ({ currency }: CurrencyViewProps) => {
   return (
     <div className="flex flex-row space-x-1">
       {currencies.map(({ value, icon, name }) => (
-        <div key={name} className="flex flex-row">
+        <div key={name} className="flex flex-row items-center">
           <img src={icon.src} className={"h-4 w-4"} />
           <label className={"text-sm"}>{value}</label>
         </div>
