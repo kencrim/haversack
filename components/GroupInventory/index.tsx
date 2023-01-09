@@ -1,34 +1,26 @@
 import { CurrencyView } from "../CurrencyView";
 import { InventorySlot } from "../InventorySlot";
 
-interface PlayerInventoryProps {
-  playerId: string;
-  isActivePlayer: boolean;
-  playerName: string;
+interface GroupInventoryProps {
+  disabled?: boolean;
   currency: Currency;
-  playerImage?: string;
-  characterName?: string;
   items: Item[];
 }
 
-export const PlayerInventory = ({
+export const GroupInventory = ({
   items,
-  playerName,
   currency,
-  playerId,
-  characterName,
-  isActivePlayer,
-}: PlayerInventoryProps) => {
-  const borderColor = isActivePlayer ? "border-amber-500" : "border-gray-500";
+  disabled = false,
+}: GroupInventoryProps) => {
+  const borderColor = disabled ? "border-gray-500" : "border-amber-500";
 
   return (
     <div
-      className={`flex flex-col h-full m-5 w-1/4 border rounded-md ${borderColor}`}
+      className={`flex flex-col h-full m-5 w-1/2 border rounded-md ${borderColor}`}
     >
       <div className={`flex flex-row border-b p-1.5 ${borderColor}`}>
         <div className="flex flex-col">
-          <h3 className="text-md">{characterName}</h3>
-          <label className="text-xs text-gray-400">{playerName}</label>
+          <h3 className="text-md">Group Storage</h3>
         </div>
         <div className="flex flex-col pt-1 ml-auto">
           <CurrencyView currency={currency} />
