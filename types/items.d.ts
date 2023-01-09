@@ -9,8 +9,9 @@ type rarity =
 interface Item {
   id: string;
   name: string;
-  img?: string;
   rarity: rarity;
+  img?: string;
+  quantity?: number;
   [key: string]: number | string;
 }
 

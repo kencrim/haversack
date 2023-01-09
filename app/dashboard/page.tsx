@@ -1,7 +1,7 @@
 import { PlayerInventory } from "~/components";
 
 const items: Item[] = [
-  { id: "abc", name: "Sword", rarity: "common" },
+  { id: "abc", name: "Sword", rarity: "common", quantity: 2 },
   { id: "daef", name: "+1 Shield", rarity: "uncommon" },
   { id: "deaf", name: "Ring of Protection", rarity: "rare" },
   { id: "dedf", name: "Ring of the Ram", rarity: "very rare" },

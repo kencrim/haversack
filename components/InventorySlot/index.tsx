@@ -11,7 +11,9 @@ export const InventorySlot = ({ item, view = "grid" }: InventorySlotProps) => {
   return (
     <div className="flex space-x-1.5 row-auto align-middle items-center">
       <div className={styles.icon}>
-        <p className={styles.name}>{item?.name}</p>
+        <p className={styles.name}>{`${item?.name}${
+          item?.quantity && item.quantity > 1 ? ` (${item?.quantity})` : ""
+        }`}</p>
       </div>
     </div>
   );
