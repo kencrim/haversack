@@ -2,7 +2,7 @@ import icon from "~/public/icon.png";
 
 export function Navbar() {
   return (
-    <nav className="bg-gray-900">
+    <nav className="bg-gray-800">
       <div className="px-4">
         <div className="relative flex h-10 items-center justify-between">
           <div className="flex flex-1 items-center justify-center sm:justify-start">

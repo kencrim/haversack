@@ -31,19 +31,35 @@ const transactions: Transaction[] = [
     recipient: "Ryggs Feegbizz",
     currency: { platinum: 20, gold: 54, silver: 3, copper: 222 },
   },
+  {
+    id: "abcfaf1f23",
+    timestamp: new Date().valueOf(),
+    actor: "Max (DM)",
+    action: "remove",
+    recipient: "Arthan Reelswood",
+    currency: { platinum: 20, gold: 54, silver: 3, copper: 222 },
+  },
+  {
+    id: "abcfafsfaf1f23",
+    timestamp: new Date().valueOf(),
+    actor: "Ryggs Feegbizz",
+    action: "remove",
+    recipient: "Ryggs Feegbizz",
+    currency: { platinum: 20, gold: 54, silver: 3, copper: 222 },
+  },
 ];
 
 export default function DashboardPage() {
   return (
     <div className="flex flex-col h-full">
-      <div className="flex flex-row h-2/5 pb-8">
+      <div className="flex flex-row h-2/5">
         <GroupInventory
           currency={{ platinum: 104, gold: 2230, silver: 37, copper: 2 }}
           items={items}
         />
         <TransactionHistory transactions={transactions} />
       </div>
-      <div className="flex flex-row h-2/5">
+      <div className="flex flex-row h-2/5 flex-wrap">
         <PlayerInventory
           playerId="abc123"
           characterName="Faran Vyshaan"
@@ -74,6 +90,14 @@ export default function DashboardPage() {
           playerName="Wren"
           isActivePlayer={false}
           currency={{ platinum: 47, gold: 56, silver: 37, copper: 24 }}
+          items={items}
+        />
+        <PlayerInventory
+          playerId="jkl012"
+          characterName="Kiel"
+          playerName="Ian"
+          isActivePlayer={false}
+          currency={{ platinum: 5, gold: 526, silver: 337, copper: 24 }}
           items={items}
         />
       </div>

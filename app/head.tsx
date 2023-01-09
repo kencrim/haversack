@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <>
-      <title>Haversack</title>
+      <title>Haversack | Inventory Manager for TTRPGs</title>
     </>
   );
 }

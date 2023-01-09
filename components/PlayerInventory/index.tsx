@@ -22,24 +22,24 @@ export const PlayerInventory = ({
   const borderColor = isActivePlayer ? "border-amber-500" : "border-gray-500";
 
   return (
-    <div
-      className={`flex flex-col h-full m-5 w-1/4 border rounded-md ${borderColor}`}
-    >
-      <div className={`flex flex-row border-b p-1.5 ${borderColor}`}>
-        <div className="flex flex-col">
-          <h3 className="text-md">{characterName}</h3>
-          <label className="text-xs text-gray-400">{playerName}</label>
-        </div>
-        <div className="flex flex-col pt-1 ml-auto">
-          <CurrencyView currency={currency} />
-        </div>
-      </div>
-      <div className="flex flex-wrap p-1.5">
-        {items.map((item) => (
-          <div className="p-1">
-            <InventorySlot key={item.id} view="list" item={item} />
+    <div className="flex p-1 w-1/4 h-full">
+      <div className={`flex flex-col border rounded-md ${borderColor}`}>
+        <div className={`flex flex-row border-b p-1.5 ${borderColor}`}>
+          <div className="flex flex-col">
+            <h3 className="text-md">{characterName}</h3>
+            <label className="text-xs text-gray-400">{playerName}</label>
           </div>
-        ))}
+          <div className="flex flex-col pt-1 ml-auto">
+            <CurrencyView currency={currency} />
+          </div>
+        </div>
+        <div className="flex flex-wrap p-1.5">
+          {items.map((item) => (
+            <div className="p-1">
+              <InventorySlot key={item.id} view="list" item={item} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

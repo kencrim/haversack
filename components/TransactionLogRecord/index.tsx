@@ -9,7 +9,7 @@ export const TransactionLogRecord = ({
 }: {
   transaction: Transaction;
 }) => {
-  const { timestamp, actor, recipient, currency, items } = transaction;
+  const { timestamp, actor, recipient, currency, items, action } = transaction;
 
   const TimestampLabel = useMemo(
     () => (
@@ -74,10 +74,28 @@ export const TransactionLogRecord = ({
 
   const ValueLabel = ItemsLabel ?? CurrencyLabel;
 
+  const ActionLabel = useMemo(
+    () => (
+      <p className="text-xs">
+        {{ remove: "removed", transfer: "gave", add: "added" }[action]}
+      </p>
+    ),
+    [action]
+  );
+
+  const Preposition = useMemo(
+    () => (
+      <p className="text-xs">
+        {{ remove: "from", transfer: "to", add: "to" }[action]}
+      </p>
+    ),
+    [action, actor, recipient]
+  );
+
   return (
     <div className="flex flex-row gap-x-1">
-      {TimestampLabel} {ActorLabel} <p className="text-xs">gave</p> {ValueLabel}{" "}
-      <p className="text-xs">to</p> {RecipientLabel}
+      {TimestampLabel} {ActorLabel} {ActionLabel} {ValueLabel} {Preposition}{" "}
+      {RecipientLabel}
     </div>
   );
 };
