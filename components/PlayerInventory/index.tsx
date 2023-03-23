@@ -1,5 +1,5 @@
 import { CurrencyView } from "../CurrencyView";
-import { InventorySlot } from "../InventorySlot";
+import Table from "../Table";
 
 interface PlayerInventoryProps {
   playerId: string;
@@ -33,13 +33,13 @@ export const PlayerInventory = ({
             <CurrencyView currency={currency} />
           </div>
         </div>
-        <div className="flex flex-wrap">
-          {items.map((item) => (
-            <div key={item.id} className="p-1">
-              <InventorySlot item={item} />
-            </div>
-          ))}
-        </div>
+        <Table
+          head={["Name", "Quantity", "Weight"]}
+          rows={[
+            ["Hello", 2, 3],
+            ["Goodbye", 5, 6]
+          ]}
+        />
       </div>
     </div>
   );

@@ -4,7 +4,6 @@ import {
   GroupInventory,
   TransactionHistory
 } from "~/components";
-import { DndContext } from "@dnd-kit/core";
 
 const items: Item[] = [
   { id: "abc", name: "Sword", rarity: "common", quantity: 2 },
@@ -53,58 +52,56 @@ const transactions: Transaction[] = [
 
 export default function DashboardPage() {
   return (
-    <DndContext>
-      <div className="flex flex-col h-full">
-        <div className="flex flex-row h-2/5">
-          <GroupInventory
-            currency={{ platinum: 104, gold: 2230, silver: 37, copper: 2 }}
-            items={items}
-          />
-          <TransactionHistory transactions={transactions} />
-        </div>
-        <div className="flex flex-row h-2/5 flex-wrap">
-          <PlayerInventory
-            playerId="abc123"
-            characterName="Faran Vyshaan"
-            playerName="Ken"
-            isActivePlayer={true}
-            currency={{ platinum: 104, gold: 2230, silver: 37, copper: 2 }}
-            items={items}
-          />
-          <PlayerInventory
-            playerId="def456"
-            characterName="Ryggs Feegbizz"
-            playerName="Brent"
-            isActivePlayer={false}
-            currency={{ platinum: 244, gold: 130, silver: 357, copper: 0 }}
-            items={items}
-          />
-          <PlayerInventory
-            playerId="ghi789"
-            characterName="Arthan Reelswood"
-            playerName="Reed"
-            isActivePlayer={false}
-            currency={{ platinum: 0, gold: 0, silver: 37, copper: 24 }}
-            items={items}
-          />
-          <PlayerInventory
-            playerId="jkl012"
-            characterName="Soszi"
-            playerName="Wren"
-            isActivePlayer={false}
-            currency={{ platinum: 47, gold: 56, silver: 37, copper: 24 }}
-            items={items}
-          />
-          <PlayerInventory
-            playerId="jkl012"
-            characterName="Kiel"
-            playerName="Ian"
-            isActivePlayer={false}
-            currency={{ platinum: 5, gold: 526, silver: 337, copper: 24 }}
-            items={items}
-          />
-        </div>
+    <div className="flex flex-col h-full">
+      <div className="flex flex-row h-2/5">
+        <GroupInventory
+          currency={{ platinum: 104, gold: 2230, silver: 37, copper: 2 }}
+          items={items}
+        />
+        <TransactionHistory transactions={transactions} />
       </div>
-    </DndContext>
+      <div className="flex flex-row h-2/5 flex-wrap">
+        <PlayerInventory
+          playerId="abc123"
+          characterName="Faran Vyshaan"
+          playerName="Ken"
+          isActivePlayer={true}
+          currency={{ platinum: 104, gold: 2230, silver: 37, copper: 2 }}
+          items={items}
+        />
+        <PlayerInventory
+          playerId="def456"
+          characterName="Ryggs Feegbizz"
+          playerName="Brent"
+          isActivePlayer={false}
+          currency={{ platinum: 244, gold: 130, silver: 357, copper: 0 }}
+          items={items}
+        />
+        <PlayerInventory
+          playerId="ghi789"
+          characterName="Arthan Reelswood"
+          playerName="Reed"
+          isActivePlayer={false}
+          currency={{ platinum: 0, gold: 0, silver: 37, copper: 24 }}
+          items={items}
+        />
+        <PlayerInventory
+          playerId="jkl012"
+          characterName="Soszi"
+          playerName="Wren"
+          isActivePlayer={false}
+          currency={{ platinum: 47, gold: 56, silver: 37, copper: 24 }}
+          items={items}
+        />
+        <PlayerInventory
+          playerId="jkl012"
+          characterName="Kiel"
+          playerName="Ian"
+          isActivePlayer={false}
+          currency={{ platinum: 5, gold: 526, silver: 337, copper: 24 }}
+          items={items}
+        />
+      </div>
+    </div>
   );
 }
