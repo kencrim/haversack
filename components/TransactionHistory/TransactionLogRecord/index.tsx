@@ -5,7 +5,7 @@ import silverIcon from "~/public/silver.svg";
 import copperIcon from "~/public/copper.svg";
 
 export const TransactionLogRecord = ({
-  transaction,
+  transaction
 }: {
   transaction: Transaction;
 }) => {
@@ -38,7 +38,7 @@ export const TransactionLogRecord = ({
       items?.length ? (
         <div>
           {items?.map((item) => (
-            <p className="text-xs font-bold text-gray-500">
+            <p key={item.id} className="text-xs font-bold text-gray-500">
               {`${item.quantity && `${item.quantity} `}${item.name}${
                 item?.quantity && item.quantity > 1 ? "s" : ""
               }`}
@@ -56,7 +56,7 @@ export const TransactionLogRecord = ({
           { name: "platinum", value: currency?.platinum ?? 0, icon: platIcon },
           { name: "gold", value: currency?.gold ?? 0, icon: goldIcon },
           { name: "silver", value: currency?.silver ?? 0, icon: silverIcon },
-          { name: "copper", value: currency?.copper ?? 0, icon: copperIcon },
+          { name: "copper", value: currency?.copper ?? 0, icon: copperIcon }
         ].reduce((acc, { name, value, icon }) => {
           if (value > 0)
             acc.push(
