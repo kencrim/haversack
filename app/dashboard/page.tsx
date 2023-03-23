@@ -18,7 +18,7 @@ const items: Item[] = [
 const transactions: Transaction[] = [
   {
     id: "abc123",
-    timestamp: new Date().valueOf(),
+    timestamp: new Date(1679585771492).valueOf(),
     actor: "Faran Vyshaan",
     recipient: "Ryggs Feegbizz",
     action: "transfer",
@@ -27,7 +27,7 @@ const transactions: Transaction[] = [
   },
   {
     id: "abc1f23",
-    timestamp: new Date().valueOf(),
+    timestamp: new Date(1679585771492).valueOf(),
     actor: "Faran Vyshaan",
     action: "transfer",
     recipient: "Ryggs Feegbizz",
@@ -35,7 +35,7 @@ const transactions: Transaction[] = [
   },
   {
     id: "abcfaf1f23",
-    timestamp: new Date().valueOf(),
+    timestamp: new Date(1679585771492).valueOf(),
     actor: "Max (DM)",
     action: "remove",
     recipient: "Arthan Reelswood",
@@ -43,7 +43,7 @@ const transactions: Transaction[] = [
   },
   {
     id: "abcfafsfaf1f23",
-    timestamp: new Date().valueOf(),
+    timestamp: new Date(1679585771492).valueOf(),
     actor: "Ryggs Feegbizz",
     action: "remove",
     recipient: "Ryggs Feegbizz",
