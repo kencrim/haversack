@@ -1,4 +1,4 @@
-import { TransactionLogRecord } from "../TransactionLogRecord";
+import { TransactionLogRecord } from "./TransactionLogRecord";
 
 export const TransactionHistory = ({
   transactions,

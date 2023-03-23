@@ -1,5 +1,5 @@
 export const useInventorySlotTailwindStyles = ({ item }: { item?: Item }) => {
-  const baseIconStyles = `flex bg-black box-border h-5 rounded-md relative hover:bg-gray-700 cursor-grab`;
+  const baseIconStyles = `flex w-full bg-black box-border h-5 rounded-md relative hover:bg-gray-700 cursor-grab`;
 
   const beforeIconStyles = `before:content-'' before:absolute before:-z-10 before:-m-px before:top-0 before:left-0 
     before:bottom-0 before:right-0 before:rounded-md`;
@@ -28,7 +28,7 @@ export const useInventorySlotTailwindStyles = ({ item }: { item?: Item }) => {
   }[rarity];
 
   return {
-    icon: `${baseIconStyles} ${beforeIconStyles} ${iconRarityGradient}`,
-    name: `${rarityColor} whitespace-nowrap px-1 text-sm`,
+    wrapper: `${baseIconStyles} ${beforeIconStyles} ${iconRarityGradient}`,
+    label: `${rarityColor} whitespace-nowrap px-1 text-sm`,
   };
 };

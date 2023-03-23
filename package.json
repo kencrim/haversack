@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@dnd-kit/core": "^6.0.7",
+    "@dnd-kit/sortable": "^7.0.2",
+    "@dnd-kit/utilities": "^3.2.1",
     "@next/font": "13.1.1",
     "@tanstack/react-query": "^4.20.9",
     "@trpc/client": "^10.8.1",

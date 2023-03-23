@@ -9,6 +9,7 @@ type rarity =
 interface Item {
   id: string;
   name: string;
+  owner?: string;
   rarity: rarity;
   img?: string;
   quantity?: number;

@@ -61,8 +61,8 @@ export const TransactionLogRecord = ({
           if (value > 0)
             acc.push(
               <div key={name} className="flex flex-row items-center">
-                <img src={icon.src} className={"h-3 w-3"} />
                 <label className={"text-xs"}>{value}</label>
+                <img src={icon.src} className={"h-3 w-3"} />
               </div>
             );
           return acc;

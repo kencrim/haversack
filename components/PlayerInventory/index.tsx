@@ -1,4 +1,5 @@
 import { CurrencyView } from "../CurrencyView";
+import { Sortable } from "../DragAndDrop";
 import { InventorySlot } from "../InventorySlot";
 
 interface PlayerInventoryProps {
@@ -33,12 +34,8 @@ export const PlayerInventory = ({
             <CurrencyView currency={currency} />
           </div>
         </div>
-        <div className="flex flex-wrap p-1.5">
-          {items.map((item) => (
-            <div className="p-1">
-              <InventorySlot key={item.id} view="list" item={item} />
-            </div>
-          ))}
+        <div className="flex flex-wrap">
+          <Sortable items={items} playerId={playerId} />
         </div>
       </div>
     </div>
