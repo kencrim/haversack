@@ -1,5 +1,4 @@
 import { CurrencyView } from "../CurrencyView";
-import { Sortable } from "../DragAndDrop";
 import { InventorySlot } from "../InventorySlot";
 
 interface PlayerInventoryProps {

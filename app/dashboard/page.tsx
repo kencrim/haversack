@@ -2,8 +2,7 @@
 import {
   PlayerInventory,
   GroupInventory,
-  TransactionHistory,
-  Sortable,
+  TransactionHistory
 } from "~/components";
 import { DndContext } from "@dnd-kit/core";
 
@@ -13,7 +12,7 @@ const items: Item[] = [
   { id: "deaf", name: "Ring of Protection", rarity: "rare" },
   { id: "dedf", name: "Ring of the Ram", rarity: "very rare" },
   { id: "deff", name: "Tome of the Stilled Tongue", rarity: "legendary" },
-  { id: "degf", name: "The Sword of the Gods", rarity: "artifact" },
+  { id: "degf", name: "The Sword of the Gods", rarity: "artifact" }
 ];
 
 const transactions: Transaction[] = [
@@ -24,7 +23,7 @@ const transactions: Transaction[] = [
     recipient: "Ryggs Feegbizz",
     action: "transfer",
     items: [{ id: "abc", name: "Sword", rarity: "common", quantity: 2 }],
-    currency: { platinum: 20, gold: 54, silver: 3, copper: 222 },
+    currency: { platinum: 20, gold: 54, silver: 3, copper: 222 }
   },
   {
     id: "abc1f23",
@@ -32,7 +31,7 @@ const transactions: Transaction[] = [
     actor: "Faran Vyshaan",
     action: "transfer",
     recipient: "Ryggs Feegbizz",
-    currency: { platinum: 20, gold: 54, silver: 3, copper: 222 },
+    currency: { platinum: 20, gold: 54, silver: 3, copper: 222 }
   },
   {
     id: "abcfaf1f23",
@@ -40,7 +39,7 @@ const transactions: Transaction[] = [
     actor: "Max (DM)",
     action: "remove",
     recipient: "Arthan Reelswood",
-    currency: { platinum: 20, gold: 54, silver: 3, copper: 222 },
+    currency: { platinum: 20, gold: 54, silver: 3, copper: 222 }
   },
   {
     id: "abcfafsfaf1f23",
@@ -48,8 +47,8 @@ const transactions: Transaction[] = [
     actor: "Ryggs Feegbizz",
     action: "remove",
     recipient: "Ryggs Feegbizz",
-    currency: { platinum: 20, gold: 54, silver: 3, copper: 222 },
-  },
+    currency: { platinum: 20, gold: 54, silver: 3, copper: 222 }
+  }
 ];
 
 export default function DashboardPage() {
