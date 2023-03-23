@@ -1,7 +1,7 @@
 import { TransactionLogRecord } from "./TransactionLogRecord";
 
 export const TransactionHistory = ({
-  transactions,
+  transactions
 }: {
   transactions: Transaction[];
 }) => {
@@ -15,7 +15,10 @@ export const TransactionHistory = ({
         </div>
         <div className="flex flex-col h-11/12 w-full overflow-y-auto p-2">
           {transactions.map((transaction) => (
-            <div className="flex flex-row flex-wrap h-1/12 w-full">
+            <div
+              key={transaction.id}
+              className="flex flex-row flex-wrap h-1/12 w-full"
+            >
               <TransactionLogRecord transaction={transaction} />
             </div>
           ))}

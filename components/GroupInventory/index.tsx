@@ -10,7 +10,7 @@ interface GroupInventoryProps {
 export const GroupInventory = ({
   items,
   currency,
-  disabled = false,
+  disabled = false
 }: GroupInventoryProps) => {
   const borderColor = disabled ? "border-gray-500" : "border-amber-500";
 
@@ -27,7 +27,7 @@ export const GroupInventory = ({
         </div>
         <div className="flex flex-wrap p-1.5">
           {items.map((item) => (
-            <div className="p-1">
+            <div key={item.id} className="p-1">
               <InventorySlot key={item.id} view="list" item={item} />
             </div>
           ))}

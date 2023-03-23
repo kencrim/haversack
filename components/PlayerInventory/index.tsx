@@ -35,7 +35,7 @@ export const PlayerInventory = ({
         </div>
         <div className="flex flex-wrap">
           {items.map((item) => (
-            <div className="p-1">
+            <div key={item.id} className="p-1">
               <InventorySlot item={item} />
             </div>
           ))}
