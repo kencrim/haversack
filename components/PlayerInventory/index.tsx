@@ -18,7 +18,7 @@ export const PlayerInventory = ({
   currency,
   playerId,
   characterName,
-  isActivePlayer,
+  isActivePlayer
 }: PlayerInventoryProps) => {
   const borderColor = isActivePlayer ? "border-amber-500" : "border-gray-500";
 
@@ -35,7 +35,11 @@ export const PlayerInventory = ({
           </div>
         </div>
         <div className="flex flex-wrap">
-          <Sortable items={items} playerId={playerId} />
+          {items.map((item) => (
+            <div className="p-1">
+              <InventorySlot item={item} />
+            </div>
+          ))}
         </div>
       </div>
     </div>
